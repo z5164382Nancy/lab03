@@ -1,0 +1,17 @@
+Actors
+-	Customer
+-	QBEI Insurances
+-	External credit card system
+-	staff
+
+Goals
+-	Rent a car
+-	Choose a car
+-	Search for cars
+-	Enter customers’ details
+-	Purchase an insurance cover (optional)
+-	Credit card authorisation
+-	Login
+-	Add new car
+-	Create report
+
