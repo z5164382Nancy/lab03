@@ -1,0 +1,100 @@
+Use Case UC-1:			Search
+
+Brief Description:		to search for a car according to the vehicle-type (small, medium, large, premium), make, model, year, registration, age, preferred pick-up and drop-off locations
+
+Initiating Actor:		Customer
+
+Actor's Goal:			to specify search criteria and view available cars that match the search criteria
+
+Participating Actors:	None
+
+Flow of events for Main Success Scenario:
+	1. Customer opens the system and selects the search criteria
+	2. Customer confirms their choices by clicking a button that says "OK"
+	3. System searches for cars that match the search criteria
+	4. Systems displys the results for the Customer to View
+
+
+
+
+Use Case UC-2:			Choose
+
+Brief Description:		to select a car to rent
+
+Initiating Actor:		Customer
+
+Actor's Goal:			to select a car to rent
+
+Participating Actors:	None
+
+Flow of events for Main Success Scenario:
+	1. Customer clicks on a car
+	2. System asks Customer for their details
+
+
+
+
+
+Use Case UC-3:			Rent
+
+Brief Description:		to enter customer's details, choose whether to get insurance, pay with a credit card
+
+Initiating Actor:		Customer
+
+Actor's Goal:			to rent a car after choosing one
+
+Participating Actors:	QBEI_Insurance, ExternalCreditCardSystem
+
+Flow of events for Main Success Scenario:
+	1. Customer enters their details and confirms by clicking on an "OK" button
+	2. include::EnterDetails(UC-6)
+	3. System (a) offers Customer optional insurance and (b) if the Customer accepts, signals to QBEI_Insurances
+	4. include::SelectInsurance(UC-7)
+	5. System asks for credit card details
+	6. Customer enter credit card details
+	7. System signal ExternalCreditCardSystem to verify details
+	8. include::CreditCardAuthentication(UC-8)
+	9. System (a) displays a message confirming the purchase and (b) sends an email to the customer's rovided email
+
+
+
+
+
+Use Case UC-4:			AddCar
+
+Brief Description:		allows admin staff to enter new car information into the system
+
+Initiating Actor:		Staff
+
+Actor's Goal:			to enter new car information into the system	
+
+Participating Actors:	None
+
+Flow of events for Main Success Scenario:
+	1. Staff enters their username and password
+	2. include::Login(UC-9)
+	3. Staff clicks a button that says "Add new car"
+	4. System asks for information on the car
+	5. Staff enters new car information into the system
+	6. include::EnterCarDetails(UC-10)
+	7. Systems adds a new car to their listings
+
+
+
+
+
+Use Case UC-5:	GenerateReport
+
+Brief Description:		generate weekly reports that show a log of cars rented during the week
+
+Initiating Actor:		Staff
+
+Actor's Goal:			generate weekly reports that show a log of cars rented during the week
+
+Participating Actors:	none
+
+Flow of events for Main Success Scenario:
+	1. Staff enters their username and password
+	2. include::Login(UC-9)
+	3. Staff clicks a button that says "Generate Weekly Report"
+	4. System generated a weekly report and displays it on screen
